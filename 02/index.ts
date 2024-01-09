@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "fs/promises";
 
-type Usario = {
+type Usuario = {
   nome: string;
   email: string;
   cpf: string;
@@ -14,13 +14,13 @@ type Usario = {
   } | null;
 };
 
-async function cadastrarUsuario(usuario: Usario): Promise<void> {
+async function cadastrarUsuario(usuario: Usuario): Promise<void> {
   const bancoDeDados_Json = await readFile("../bd.json", {
     encoding: "utf8",
   });
 
   type BancoDeDados = {
-    usuarios: Usario[];
+    usuarios: Usuario[];
   };
 
   const bancoDeDados: BancoDeDados = JSON.parse(bancoDeDados_Json);
@@ -47,17 +47,17 @@ async function listarUsuarios() {
   console.log(`Lista de usuarios:`, listaDeUsuarios.usuarios);
 }
 
-const usuario1: Usario = {
-  nome: "José Santos",
-  email: "joss@gmail.com",
-  cpf: "322325222",
-  profissao: "UX Design",
+const usuario1: Usuario = {
+  nome: "Luiz Davi",
+  email: "luiz@gmail.com",
+  cpf: "922.474.210-67",
+  profissao: "Programador",
   endereco: {
-    cep: "01321-000",
-    rua: "São Domingos",
-    bairro: "Bela Vista",
-    cidade: "São Paulo",
+    cep: "65570-000",
+    rua: "São Raimundo",
+    bairro: "Boa vista",
+    cidade: "Araioses",
   },
 };
 
-listarUsuarios();
+cadastrarUsuario(usuario1);

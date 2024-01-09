@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "nome": "Luiz Davi",
+      "email": "luiz@gmail.com",
+      "cpf": "922.474.210-67",
+      "profissao": "Programador",
+      "endereco": {
+        "cep": "65570-000",
+        "rua": "São Raimundo",
+        "bairro": "Boa vista",
+        "cidade": "Araioses"
+      }
+    }
+  ]
+}
