@@ -37,6 +37,16 @@ async function cadastrarUsuario(usuario: Usario): Promise<void> {
   });
 }
 
+async function listarUsuarios() {
+  const listaDeUsuarios = JSON.parse(
+    await readFile("../bd.json", {
+      encoding: "utf8",
+    })
+  );
+
+  console.log(`Lista de usuarios:`, listaDeUsuarios.usuarios);
+}
+
 const usuario1: Usario = {
   nome: "José Santos",
   email: "joss@gmail.com",
@@ -50,4 +60,4 @@ const usuario1: Usario = {
   },
 };
 
-cadastrarUsuario(usuario1);
+listarUsuarios();
